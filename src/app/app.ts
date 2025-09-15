@@ -1,6 +1,7 @@
+import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { KENDO_GRID } from "@progress/kendo-angular-grid";
+import { KENDO_GRID } from '@progress/kendo-angular-grid';
 
 export interface PersonData {
   id: number;
@@ -12,59 +13,59 @@ export interface PersonData {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,KENDO_GRID],
+  imports: [RouterOutlet, CommonModule, KENDO_GRID],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
-  public gridData: PersonData[] = this.createRandomData(10000);
+  public gridData: PersonData[] = this.createRandomData(100);
 
   /* Generating example data */
   private createRandomData(count: number): PersonData[] {
     const firstNames = [
-        "Nancy",
-        "Andrew",
-        "Janet",
-        "Margaret",
-        "Steven",
-        "Michael",
-        "Robert",
-        "Laura",
-        "Anne",
-        "Nige",
+        'Nancy',
+        'Andrew',
+        'Janet',
+        'Margaret',
+        'Steven',
+        'Michael',
+        'Robert',
+        'Laura',
+        'Anne',
+        'Nige',
       ],
       lastNames = [
-        "Davolio",
-        "Fuller",
-        "Leverling",
-        "Peacock",
-        "Buchanan",
-        "Suyama",
-        "King",
-        "Callahan",
-        "Dodsworth",
-        "White",
+        'Davolio',
+        'Fuller',
+        'Leverling',
+        'Peacock',
+        'Buchanan',
+        'Suyama',
+        'King',
+        'Callahan',
+        'Dodsworth',
+        'White',
       ],
       cities = [
-        "Seattle",
-        "Tacoma",
-        "Kirkland",
-        "Redmond",
-        "London",
-        "Philadelphia",
-        "New York",
-        "Seattle",
-        "London",
-        "Boston",
+        'Seattle',
+        'Tacoma',
+        'Kirkland',
+        'Redmond',
+        'London',
+        'Philadelphia',
+        'New York',
+        'Seattle',
+        'London',
+        'Boston',
       ],
       titles = [
-        "Accountant",
-        "Vice President, Sales",
-        "Sales Representative",
-        "Technical Support",
-        "Sales Manager",
-        "Web Designer",
-        "Software Developer",
+        'Accountant',
+        'Vice President, Sales',
+        'Sales Representative',
+        'Technical Support',
+        'Sales Manager',
+        'Web Designer',
+        'Software Developer',
       ];
 
     return Array(count)
